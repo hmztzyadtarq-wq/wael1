@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المشروع | وائل محمد أبو سبع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body">
+
+    <header class="navbar">
+        <div class="logo">وائل <span>أبو سبع</span></div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <div class="project-details-card">
+            <h1 id="det-title">عنوان المشروع</h1>
+            <p id="det-type" class="det-subtitle">تفاصيل نوع الرخام</p>
+            
+            <!-- أزرار التبويبات (صور وفيديوهات) -->
+            <div class="project-tabs">
+                <button id="btn-images-tab" class="tab-btn active" onclick="switchTab('images')"><i class="fas fa-images"></i> صور العمل (10)</button>
+                <button id="btn-videos-tab" class="tab-btn" onclick="switchTab('videos')"><i class="fas fa-video"></i> فيديوهات التنفيذ (6)</button>
+            </div>
+
+            <!-- محتوى تبويب الصور -->
+            <div id="images-tab" class="tab-content active">
+                <!-- الصور ستظهر هنا ديناميكياً -->
+            </div>
+
+            <!-- محتوى تبويب الفيديوهات -->
+            <div id="videos-tab" class="tab-content">
+                <!-- الفيديوهات ستظهر هنا ديناميكياً -->
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-right"></i> العودة لمعرض المشاريع</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

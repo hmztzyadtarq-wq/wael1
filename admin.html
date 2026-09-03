@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | وائل محمد أبو سبع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h2><i class="fas fa-tools"></i> لوحة التحكم الإدارية</h2>
+            <a href="index.html" class="btn-secondary" target="_blank"><i class="fas fa-globe"></i> استعراض الموقع</a>
+        </div>
+
+        <!-- طلبات العملاء -->
+        <div class="admin-card">
+            <h3><i class="fas fa-envelope-open-text"></i> طلبات العملاء الواردة</h3>
+            <div id="admin-messages-list"></div>
+        </div>
+
+        <!-- إضافة مشروع جديد -->
+        <div class="admin-card">
+            <h3><i class="fas fa-plus-circle"></i> إضافة مشروع جديد للمعرض (صور وفيديوهات كثيرة)</h3>
+            <form id="project-form">
+                <div class="form-group">
+                    <label>عنوان المشروع</label>
+                    <input type="text" id="project-title" required placeholder="اسم المشروع">
+                </div>
+                <div class="form-group">
+                    <label>نوع التشطيب / الرخام</label>
+                    <input type="text" id="project-type" required placeholder="مثال: رخام إيطالي بالكريستال">
+                </div>
+                <div class="form-group">
+                    <label>رابط صورة الغلاف الرئيسية</label>
+                    <input type="url" id="project-cover" required placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>روابط صور إضافية (افصل بينها بـ فاصلة `,`)</label>
+                    <textarea id="project-extra-imgs" rows="2" placeholder="رابط_صورة_1, رابط_صورة_2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>روابط الفيديوهات (افصل بينها بـ فاصلة `,`)</label>
+                    <textarea id="project-videos" rows="2" placeholder="رابط_فيديو_1, رابط_فيديو_2"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">نشر المشروع في المعرض</button>
+            </form>
+        </div>
+
+        <!-- المشاريع الحالية -->
+        <div class="admin-card">
+            <h3><i class="fas fa-list"></i> المشاريع الحالية في المعرض</h3>
+            <div id="admin-projects-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

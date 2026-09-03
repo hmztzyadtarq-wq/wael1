@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وائل محمد أبو سبع | خبير جلي وتشطيب وتلميع الرخام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header class="navbar">
+        <div class="logo">وائل <span>أبو سبع</span></div>
+   <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#portfolio">معرض الأعمال</a>
+    <a href="#contact" class="contact-btn">تواصل معنا</a>
+    <!-- زر القمر والشمس -->
+    <button id="theme-toggle-btn" class="theme-toggle-btn" title="تغيير الوضع (داكن/فاتح)"><i class="fas fa-moon"></i></button>
+</nav>
+    </header>
+
+    <!-- قسم الواجهة الرئيسي -->
+    <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>فن جلي وتلميع الرخام الإيطالي</h1>
+        <p>نقدم أحدث تقنيات جلي، تلميع، وحماية الرخام والجرانيت بأعلى معايير الجودة والفخامة لمنازلكم وقصوركم.</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn-primary"><i class="fas fa-concierge-bell"></i> خدماتنا</a>
+            <a href="#contact" class="btn-secondary"><i class="fas fa-phone-alt"></i> تواصل معنا</a>
+        </div>
+    </div>
+    </section>
+    <!-- قسم الخدمات (يفتح نافذة منبثقة لطلب الخدمة) -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>خدماتنا المتخصصة</h2>
+            <p class="section-desc">اضغط على أي خدمة لطلبها مباشرة عبر النافذة المنبثقة</p>
+            <div class="features-grid">
+                <div class="feature-card" onclick="openServiceModal('معالجة الفواصل والشقوق')">
+                    <i class="fas fa-tools"></i>
+                    <h3>معالجة الفواصل</h3>
+                    <p>تعبئة الفواصل بمادة البوليستر المطابقة للون الرخام لتظهر كقطعة واحدة.</p>
+                    <span class="card-link-text">اطلب الخدمة <i class="fas fa-arrow-left"></i></span>
+                </div>
+                <div class="feature-card" onclick="openServiceModal('التشطيب والجلي بالكريستال')">
+                    <i class="fas fa-sparkles"></i>
+                    <h3>التشطيب والجلي</h3>
+                    <p>إزالة الخدوش وإعادة البريق واللمعان المرايا الأصلي للرخام.</p>
+                    <span class="card-link-text">اطلب الخدمة <i class="fas fa-arrow-left"></i></span>
+                </div>
+                <div class="feature-card" onclick="openServiceModal('حماية وعزل الرخام')">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>حماية وعزل الرخام</h3>
+                    <p>تطبيق طبقات عزل متطورة لحماية الرخام من السوائل والعوامل الزمنية.</p>
+                    <span class="card-link-text">اطلب الخدمة <i class="fas fa-arrow-left"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض المشاريع (4 كروت رئيسية على الأقل) -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>معرض المشاريع والتشطيبات</h2>
+            <p class="section-desc">اضغط على أي مشروع لاستعراض 10 صور و6 فيديوهات تفصيلية داخل التبويبات</p>
+            <div id="portfolio-grid" class="portfolio-grid">
+                <!-- يتم حقن الكروت هنا من ملف script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة منبثقة لطلب الخدمة (Modal) -->
+    <div id="serviceModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeServiceModal()">&times;</button>
+            <h2 id="modal-service-title" style="font-size: 1.5rem; margin-bottom: 5px;">طلب خدمة</h2>
+            <p style="color: var(--accent-honey); font-size: 0.9rem; margin-bottom: 20px;">املأ البيانات وسنتواصل معك فوراً</p>
+            
+            <form id="modal-service-form">
+                <input type="hidden" id="modal-service-name">
+                <div class="form-group">
+                    <label>الاسم الكريم</label>
+                    <input type="text" id="client-name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف / الواتساب</label>
+                    <input type="tel" id="client-phone" required placeholder="رقم التواصل">
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات أو تفاصيل المكان</label>
+                    <textarea id="client-notes" rows="3" placeholder="المساحة أو تفاصيل العمل..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">إرسال الطلب</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>تواصل مع وائل أبو سبع مباشرة</h2>
+            <p>نحن مستعدون للإجابة على استفساراتكم وتحديد مواعيد المعاينة.</p>
+            <div class="social-links">
+                <a href="tel:01000000000" class="social-item"><i class="fas fa-phone-alt"></i> <span>اتصل الآن</span></a>
+                <a href="https://wa.me/200000000000" target="_blank" class="social-item whatsapp"><i class="fab fa-whatsapp"></i> <span>واتساب</span></a>
+                <a href="https://facebook.com" target="_blank" class="social-item facebook"><i class="fab fa-facebook-f"></i> <span>فيسبوك</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - وائل محمد أبو سبع | تشطيب وتلميع الرخام الطبيعي</p>
+    </footer>
+
+    <script>
+        function openServiceModal(serviceName) {
+            document.getElementById('modal-service-title').textContent = `طلب خدمة: ${serviceName}`;
+            document.getElementById('modal-service-name').value = serviceName;
+            document.getElementById('serviceModal').style.display = 'flex';
+        }
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target == modal) { modal.style.display = 'none'; }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
